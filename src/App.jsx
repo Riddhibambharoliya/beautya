@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Common/Navbar";
 import Footer from "./Components/Common/Footer";
+import Landing from "./Components/Landing";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* <Route path="/" element={<Navbar/>}/> */}
-            <Route path="/" element={<Footer/>}/>
+            <Route path="/" element={<Landing/>}/>
           </Routes>
         </BrowserRouter>
       </div>

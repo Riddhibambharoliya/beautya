@@ -40,7 +40,7 @@ const Footer = () => {
             <span className="text-xs md:text-base">Recyclable Packaging</span>
           </div>
         </div>
-        <div className="bg-[#510228] py-10 md:px-20 md:gap-20 xl:gap-80 gap-10 flex md:flex-row flex-col flex-wrap px-5 text-[#FBEFF2]">
+        <div className="bg-[#510228] py-10 md:px-20 md:gap-20 2xl:gap-80  gap-10 flex md:flex-row flex-col flex-wrap px-5 text-[#FBEFF2]">
           <div>
             <p className="font-bold text-lg text-[#FBEFF2] pb-3">
               How Can We Help?
