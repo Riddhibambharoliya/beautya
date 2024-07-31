@@ -10,7 +10,6 @@ const NewSeller = () => {
   useEffect(() => {
     setProducts(NewProduct);
   }, []);
-  console.log(products);
   return (
     <div className="flex flex-col items-center">
       <h1 className="font-bold text-center md:text-2xl md:mb-5 mb-0 text-xl text-white">
@@ -20,7 +19,7 @@ const NewSeller = () => {
         {!isBanner && <div className="border p-2 cursor-pointer hidden md:flex bg-white">
           <FaCaretLeft className="text-xl text-gray-600" />
         </div>}
-        <div className="flex flex-row md:gap-5 gap-2 m-5 flex-wrap justify-center">
+        <div className="flex flex-row md:gap-5 gap-2 m-3 flex-wrap justify-center">
           {isBanner && (
             <div className="md:w-[35rem] gap-0">
               <div>
@@ -40,9 +39,9 @@ const NewSeller = () => {
           {products?.map((product, index) => {
             return (
               <>
-                <div className="flex flex-col 2xl:w-72 lg:w-52 md:w-48 w-[136px] border bg-white">
+                <div className="flex flex-col 2xl:w-72 lg:w-52 md:w-48 w-full  border bg-white">
                   <div key={index}>
-                    <img src={product.imageUrl} alt="" className="w-full"/>
+                    <img src={product.imageUrl} alt="" className="w-full h-80"/>
                   </div>
 
                   <div className="md:p-5 p-2 flex flex-col gap-3">

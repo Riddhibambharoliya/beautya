@@ -24,4 +24,5 @@ export const SellerProduct=[
         description:"Pluming Gloss - Instant And Long-Term Volume Effect-24th Hydration",
         price:"$76.00"
     },
+    
 ]

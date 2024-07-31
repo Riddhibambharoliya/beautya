@@ -14,6 +14,9 @@ import BestSeller from "./Common/BestSeller";
 import NewSeller from "./Common/NewSeller";
 import Offer from "../assets/Offer.png";
 import Brand from "../assets/Brand.png";
+import Blog from "./Common/Blog";
+import ScrollToTopButton from "./Common/ScrollToTopButton";
+import OnlineChatButton from "./Common/OnlineChatButton";
 
 const Landing = () => {
   const sliderRef = useRef(null);
@@ -29,6 +32,8 @@ const Landing = () => {
 
   return (
     <>
+    <div className="bg-[#FAF9F5]">
+      
       <Navbar />
       <div className="h-auto">
         <Slider items={images} />
@@ -158,9 +163,8 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="md:m-10 my-10 flex md:flex-row flex-col justify-center items-center md:text-[#FBEFF2] text-black">
+        <div className="md:m-10 my-10 flex md:flex-row flex-col justify-center items-center md:text-[#FBEFF2] text-black">
         <div className="md:h-auto md:w-[75rem] bg-[#3D021E] grid grid-cols-1 md:grid-cols-2 ">
           <div className="md:flex hidden flex-col py-7 px-20 gap-2 justify-center">
             <p className="text-xl font-bold mb-2">Our Brand</p>
@@ -198,7 +202,15 @@ const Landing = () => {
         </div>
       </div>
 
+      <Blog/>
+
+      </div>
+
+      
       <Footer />
+      <ScrollToTopButton/>
+      <OnlineChatButton/>
+    </div>
     </>
   );
 };

@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       <div className="">
-        <div className="bg-[#FBEFF2] grid md:grid-cols-4 px-5 md:px-20 grid-cols-1 py-5 gap-5 text-[#510228]">
+        <div className="bg-[#FBEFF2] grid 2xl:grid-cols-4 lg:grid-cols-2 px-5 2xl:px-44 md:px-20  grid-cols-1 py-5 gap-5 text-[#510228]">
           <div className="flex gap-4 md:gap-5">
             <GiRabbit className="text-2xl" />
             <span className="text-xs md:text-base">No Tests On Animals</span>
@@ -40,7 +40,7 @@ const Footer = () => {
             <span className="text-xs md:text-base">Recyclable Packaging</span>
           </div>
         </div>
-        <div className="bg-[#510228] py-10 md:px-20 md:gap-20 2xl:gap-80  gap-10 flex md:flex-row flex-col flex-wrap px-5 text-[#FBEFF2]">
+        <div className="bg-[#510228] py-10 2xl:px-44 md:px-20  md:gap-20 2xl:gap-80  gap-10 flex md:flex-row flex-col flex-wrap px-5 text-[#FBEFF2]">
           <div>
             <p className="font-bold text-lg text-[#FBEFF2] pb-3">
               How Can We Help?
@@ -92,7 +92,7 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="bg-[#3D021E] px-5 md:px-20 py-5 flex justify-between md:flex-row flex-col gap-7">
+        <div className="bg-[#3D021E] px-5 2xl:px-44 md:px-20  py-5 flex justify-between md:flex-row flex-col gap-7">
           <div className="flex md:flex-row text-[#FBEFF2] gap-5 flex-col">
             <div className="flex gap-3 items-center">
               <CiLocationOn className="text-[#FA58A6] text-2xl" />
@@ -113,7 +113,7 @@ const Footer = () => {
             <FaTiktok />
           </div>
         </div>
-        <div className="bg-[#14010A] text-[#FBEFF2] flex px-5 md:px-20 py-5 justify-between md:flex-row flex-col gap-7">
+        <div className="bg-[#14010A] text-[#FBEFF2] flex px-5 2xl:px-44 md:px-20  py-5 justify-between md:flex-row flex-col gap-7">
           <div>
             <span className="flex items-center gap-3">
               <FaRegCopyright />
