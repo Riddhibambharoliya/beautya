@@ -4,6 +4,7 @@ import Footer from "./Components/Common/Footer";
 import Landing from "./Components/Landing";
 
 import './App.css'
+import GiftsSetsMenu from "./Components/GiftsSetsMenu";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<Navbar/>}/> */}
             <Route path="/" element={<Landing/>}/>
+            <Route path="/Gifts_Sets" element={<GiftsSetsMenu/>}/>
           </Routes>
         </BrowserRouter>
       </div>

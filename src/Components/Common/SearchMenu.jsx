@@ -11,8 +11,8 @@ const SearchMenu = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className=" inset-0 bg-black bg-opacity-50 backdrop-blur-sm md:flex top-20 justify-center h-screen w-full ">
-      <div className="fixed flex flex-1  md:bg-white bg-[#FAF9F5] 2xl:p-5 md:p-0 shadow-lg h-screen w-full ">
+    <div className="inset-0 bg-black bg-opacity-50 backdrop-blur-sm md:flex top-20 justify-center h-screen w-full ">
+      <div className="fixed flex flex-1  md:bg-white bg-[#FAF9F5] 2xl:p-5 md:p-0 shadow-lg h-screen w-full" style={{ overflowY: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <button
           className="absolute top-3 right-3 text-xl font-bold"
           onClick={onClose}
@@ -68,7 +68,7 @@ const SearchMenu = ({ isOpen, onClose }) => {
                   View All
                 </button>
               </div>
-              <div className="md:flex md:flex-row grid grid-cols-2 2xl:gap-4 md:px-0 px-5 lg:gap-1 md:gap-1 gap-2 my-3">
+              <div className="md:flex md:flex-row flex-wrap grid grid-cols-2 2xl:gap-4 md:px-0 px-5 lg:gap-1 md:gap-1 gap-2 my-3">
                 {products.map((product, index) => (
                   <div
                     key={index}
