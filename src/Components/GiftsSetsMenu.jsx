@@ -14,16 +14,17 @@ import ads1 from "../assets/Ads1.png";
 import ads2 from "../assets/Ads2.png";
 import { RxCross2 } from "react-icons/rx";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 const OutOfStockToggle = () => {
   const [isChecked, setIsChecked] = useState(false);
-
+  
   const handleToggle = () => {
     setIsChecked(!isChecked);
   };
-
+  
   return (
-    <div className="bg-white p-3 flex items-start justify-between">
+    <div className="bg-white p-3 flex items-start justify-between md:border-b border-y">
       <p className="font-bold text-base">Out Of Stock Items</p>
       <label className="flex items-center cursor-pointer">
         <div className="relative">
@@ -51,7 +52,8 @@ const GiftsSetsMenu = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const [viewFilters, setViewFilters] = useState(false);
-
+  const navigate = useNavigate();
+  
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
   };
@@ -187,27 +189,25 @@ const GiftsSetsMenu = () => {
       <div className="bg-[#FAF9F5]">
         <Navbar />
         <div className="flex justify-center h-auto w-full">
-          <div className="flex flex-col 2xl:p-5 md:p-4 p-4 py-4 md:py-0">
+          <div className="flex flex-col 2xl:p-5 md:p-4 py-4 md:py-0">
             <div className="flex flex-col gap-5 mb-4 ">
               <p className="flex flex-row items-center gap-1">
                 Home <GoChevronRight />
-                <span className="font-bold">Women Skincare</span>
+                <span className="font-bold">All Products</span>
               </p>
               <p>
-                <span className="text-xl font-bold">Women Skincare</span> (216)
+                <span className="text-xl font-bold">All Products</span> (216)
               </p>
               {selectedFilters.length > 0 && (
-                <div className="flex flex-col gap-3  px-3 pt-3 md:hidden">
+                <div className="flex flex-col gap-3 pt-3 md:hidden">
                   <div className="flex flex-row justify-between">
-                    <>
-                      <p className="font-bold">Applied Filters</p>
-                      <p
-                        className="text-[#A10550] cursor-pointer pb-3"
-                        onClick={clearAllFilters}
-                      >
-                        Clear All Filters
-                      </p>
-                    </>
+                    <p className="font-bold">Applied Filters</p>
+                    <p
+                      className="text-[#A10550] cursor-pointer pb-3"
+                      onClick={clearAllFilters}
+                    >
+                      Clear All Filters
+                    </p>
                   </div>
                   <ul className="flex flex-col gap-2">
                     {selectedFilters.map((filter, index) => (
@@ -312,7 +312,7 @@ const GiftsSetsMenu = () => {
             </div>
             <div className="md:grid grid-cols-4 md:gap-4 gap-0 flex justify-center">
               <div className="col-start-1 md:flex flex-col gap-1">
-                <div className="md:flex flex-col gap-3 bg-white px-3 pt-3 hidden">
+                <div className="md:flex flex-col gap-3 bg-white mr-5 px-3 pt-3 hidden">
                   <p className="font-bold">Applied Filters</p>
                   <ul className="flex flex-col gap-2">
                     {selectedFilters.map((filter, index) => (
@@ -340,10 +340,12 @@ const GiftsSetsMenu = () => {
                   )}
                 </div>
                 <div
-                  className={`fixed inset-0  z-50 bg-white p-4  transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
-                    viewFilters ? "translate-x-0 overflow-y-auto" : "translate-x-full overflow-y-scroll"
-                  } md:translate-x-0 md:flex md:flex-col md:gap-1 md:mr-5 ${
-                    viewFilters ? " flex flex-col h-full w-full" : ""
+                  className={`fixed inset-0 z-50 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
+                    viewFilters
+                      ? "  translate-x-0 overflow-y-scroll"
+                      : "translate-x-full "
+                  } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
+                    viewFilters ? "h-full w-full" : ""
                   } md:block`}
                 >
                   <div className="flex justify-between items-center bg-white p-3 md:hidden">
@@ -357,22 +359,22 @@ const GiftsSetsMenu = () => {
                   </div>
                   <OutOfStockToggle />
                   {menuData.map((menu, index) => (
-                    <div className="bg-white p-3">
+                    <div className="bg-white border-b">
                       <div
-                        className="flex flex-row justify-between items-center cursor-pointer"
+                        className={`flex flex-row justify-between items-center cursor-pointer p-3 ${
+                          isVisible ? "text-[#A10550]" : "text-black"
+                        }`}
                         onClick={toggleVisibility}
                       >
-                        <p className="font-bold md:text-base text-xs">
-                          {menu.title}
-                        </p>
+                        <p className="font-bold text-base">{menu.title}</p>
                         <span>
                           {isVisible ? <FaCaretUp /> : <FaCaretDown />}
                         </span>
                       </div>
-                      <ul className={`${isVisible ? "block" : "hidden"}`}>
+                      <ul className={`${isVisible ? "block p-3" : "hidden"}`}>
                         {menu?.items &&
                           menu?.items?.map((item, index) => (
-                            <li key={index} className="py-1">
+                            <li key={index} className=" flex py-1 gap-2">
                               <input
                                 type="checkbox"
                                 name={item}
@@ -385,36 +387,29 @@ const GiftsSetsMenu = () => {
                                     removeFilter(e.target.name);
                                   }
                                 }}
-                              />{" "}
-                              {item}
+                              />
+                              <span className="text-sm">{item}</span>
                             </li>
                           ))}
                       </ul>
                     </div>
                   ))}
-                  <div className="grid grid-cols-2 p-3 border-t">
-                    <button className="bg-transparent text-[#A10550] px-2 py-2">
-                      Clear Filters
-                    </button>
-                    <button className="text-white bg-[#A10550] px-2 py-2"  onClick={() => setViewFilters(false)}>
-                      Applied Filters
-                    </button>
-                  </div>
-
-                  {/* <div className="fixed bottom-0 left-0 right-0 bg-white p-3 border-t">
-                    <div className="grid grid-cols-2 gap-2">
+                  <div className="border-t md:hidden">
+                    <div className="grid grid-cols-2 p-3">
                       <button
                         className="bg-transparent text-[#A10550] px-2 py-2"
                         onClick={clearAllFilters}
                       >
                         Clear Filters
                       </button>
-                      <button className="text-white bg-[#A10550] px-2 py-2">
-                        Apply Filters
+                      <button
+                        className="text-white bg-[#A10550] px-2 py-2"
+                        onClick={() => setViewFilters(false)}
+                      >
+                        Applied Filters
                       </button>
                     </div>
-                  </div> */}
-
+                  </div>
                 </div>
               </div>
               <div className="grid 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 col-span-3 gap-4">
@@ -450,6 +445,7 @@ const GiftsSetsMenu = () => {
                     <div
                       key={index}
                       className="flex flex-col 2xl:w-64 lg:w-60 md:w-44 w-36 h-fit border bg-white"
+                      onClick={()=>navigate("/View_Products")}
                     >
                       <img
                         src={product.imageUrl}
