@@ -38,14 +38,29 @@ const ProductQuestions = () => {
       answer:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum eius nisi quasi odit, debitis aspernatur, ipsa exercitationem  consequatur voluptatum ullam repellendus excepturi itaque.",
     },
+    {
+      question: "How often should i use this product?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum eius nisi quasi odit, debitis aspernatur, ipsa exercitationem  consequatur voluptatum ullam repellendus excepturi itaque.",
+    },
+    {
+      question: "How should i store this product?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum eius nisi quasi odit, debitis aspernatur, ipsa exercitationem  consequatur voluptatum ullam repellendus excepturi itaque.",
+    },
+    {
+      question: "How long will it take to see result from using this product?",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum eius nisi quasi odit, debitis aspernatur, ipsa exercitationem  consequatur voluptatum ullam repellendus excepturi itaque.",
+    },
   ];
   return (
     <>
-      <div className="">
+      {/* <div className="">
         <h1 className="text-center text-lg font-bold mb-3">
           Prestige LA Micro-Huile Serum Frequently Asked Questions
-        </h1>
-        <div className="flex flex-col mx-3 bg-white border-t">
+        </h1> */}
+        <div className="flex flex-col md:mx-3 mx-0 bg-white border-t">
           {productQuestions?.map((ques, index) => {
             return (
               <div key={index} className="flex flex-col  gap-3 border-b p-3">
@@ -79,7 +94,7 @@ const ProductQuestions = () => {
             );
           })}
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 };

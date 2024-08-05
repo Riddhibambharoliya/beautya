@@ -35,24 +35,21 @@ const Navbar = () => {
             <img src={logo} alt="Logo" className="h-14 col-start-2 col-end-4" />
           </div>
           <ul className="md:flex md:flex-row md:gap-5 md:font-bold lg:gap-12 hidden md:text-sm">
-            <Link to={"/"} onClick={handleMenuClick} className="cursor-pointer">
+            <Link to={"/"} className="cursor-pointer">
               Home
             </Link>
             <li to={"#"} onClick={handleMenuClick} className="cursor-pointer">
               Women Skincare
             </li>
-            <Link
-              to={"/Gifts_Sets"}
-              className="cursor-pointer"
-            >
+            <Link to={"/Gifts_Sets"} className="cursor-pointer">
               All Products
             </Link>
-            <li to={"#"} onClick={handleMenuClick} className="cursor-pointer">
-              Branches
-            </li>
-            <li to={"#"} onClick={handleMenuClick} className="cursor-pointer">
+            <Link to={"/View_Blog"} className="cursor-pointer">
+              Blogs
+            </Link>
+            <Link to={"/Brand"} className="cursor-pointer">
               Our Brand
-            </li>
+            </Link>
           </ul>
           <div className="flex flex-row gap-4 items-center ps-4 ">
             <span
@@ -94,12 +91,12 @@ const Navbar = () => {
                 </span>
               </li>
               <li className="p-2 bg-white flex flex-row justify-between items-center">
-                Gifts & Sets
+                All Products
                 <span>
                   <FaCaretRight />
                 </span>
               </li>
-              <li className="p-2 bg-white">Branches</li>
+              <li className="p-2 bg-white">Blogs</li>
               <li className="p-2 bg-white">Our Brand</li>
             </ul>
           </div>

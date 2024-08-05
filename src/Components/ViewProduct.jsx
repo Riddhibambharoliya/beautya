@@ -23,6 +23,7 @@ import { FaCaretRight } from "react-icons/fa";
 import { FaCaretLeft } from "react-icons/fa";
 import NewSeller from "./Common/NewSeller";
 import offer from "../assets/Offer.png";
+import BranchesStockModal from "./Modal/BranchesStockModal";
 
 const ViewProduct = () => {
   const [dropList, setDropList] = useState(false);
@@ -30,6 +31,7 @@ const ViewProduct = () => {
   const [isReadable, setIsReadable] = useState(false);
   const [products, setProducts] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const [isBranchModalOpen, setIsBranchModalOpen] = useState(false);
   const productsPerPage = 4;
 
   useEffect(() => {
@@ -82,6 +84,13 @@ const ViewProduct = () => {
     } else {
       setIsReadable(section);
     }
+  };
+
+  const handleOpenModal = () => {
+    setIsBranchModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsBranchModalOpen(false);
   };
 
   return (
@@ -233,14 +242,24 @@ const ViewProduct = () => {
                       </div>
                     )}
                   </div>
-                  <button className="hidden bg-[#A10550] text-white py-2 px-4 my-3 md:flex flex-row justify-center items-center gap-2">
+                  <button
+                    className="hidden bg-[#A10550] text-white py-2 px-4 my-3 md:flex flex-row justify-center items-center gap-2"
+                    onClick={handleOpenModal}
+                  >
                     <IoLocationOutline className="text-lg" /> Check in Branch
                     Stock
                   </button>
-                  <button className="bg-[#A10550] text-white py-2 px-4 md:hidden fixed bottom-0 left-0 right-0 w-full flex flex-row justify-center items-center gap-2">
+                  <button
+                    className="bg-[#A10550] text-white py-2 px-4 md:hidden fixed bottom-0 left-0 right-0 w-full flex flex-row justify-center items-center gap-2"
+                    onClick={handleOpenModal}
+                  >
                     <IoLocationOutline className="text-lg" /> Check in Branch
                     Stock
                   </button>
+                  <BranchesStockModal
+                    isOpen={isBranchModalOpen}
+                    onClose={handleCloseModal}
+                  />
                   <div className="flex flex-col gap-3 md:text-base text-xs md:p-5 p-3 bg-[#FBEFF2] text-[#A10550]">
                     <p className="flex gap-4 items-center">
                       <span className="md:text-xl text-lg">
@@ -294,7 +313,12 @@ const ViewProduct = () => {
             </div>
           </div>
           <div className="container">
-            <ProductQuestions />
+            <div className=" mx-3">
+              <h1 className="text-center text-lg font-bold mb-3">
+                Prestige LA Micro-Huile Serum Frequently Asked Questions
+              </h1>
+              <ProductQuestions />
+            </div>
 
             <div className="flex flex-col items-center my-5">
               <h1 className="font-bold text-center flex flex-wrap md:text-2xl md:mb-5 px-3 mb-0 text-xl">

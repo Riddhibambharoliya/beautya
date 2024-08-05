@@ -13,6 +13,7 @@ import { FaTiktok } from "react-icons/fa6";
 import { GrReddit } from "react-icons/gr";
 import { FaRegCopyright } from "react-icons/fa";
 import { GrSearch } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,13 +42,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="bg-[#510228] py-10 2xl:px-44 md:px-20  md:gap-20 2xl:gap-80  gap-10 flex md:flex-row flex-col flex-wrap px-5 text-[#FBEFF2]">
-          <div>
+          <div className="flex flex-col">
             <p className="font-bold text-lg text-[#FBEFF2] pb-3">
               How Can We Help?
             </p>
             <p>Beautya Branches</p>
-            <p>Contact Us</p>
-            <p>FAQ</p>
+            <Link to={'/Contact_Us'}>Contact Us</Link>
+            <Link to={'/FAQs'}>FAQ</Link>
             <p>Our Brand</p>
             <p>Blog</p>
           </div>

@@ -5,6 +5,11 @@ import Landing from "./Components/Landing";
 import GiftsSetsMenu from "./Components/GiftsSetsMenu";
 import ViewProduct from "./Components/ViewProduct";
 import BranchesStockModal from "./Components/Modal/BranchesStockModal";
+import BlogMenu from "./Components/BlogMenu";
+import BlogDetails from "./Components/BlogDetails";
+import ContactUs from "./Components/ContactUs";
+import FAQs from "./Components/FAQs";
+import Brand from "./Components/Brand";
 
 function App() {
 
@@ -17,7 +22,11 @@ function App() {
             <Route path="/" element={<Landing/>}/>
             <Route path="/Gifts_Sets" element={<GiftsSetsMenu/>}/>
             <Route path="/View_Products" element={<ViewProduct/>}/>
-            <Route path="/Stock_Modal" element={<BranchesStockModal/>}/>
+            <Route path="/View_Blog" element={<BlogMenu/>}/>
+            <Route path="/Blog" element={<BlogDetails/>}/>
+            <Route path="/Brand" element={<Brand/>}/>
+            <Route path="/Contact_Us" element={<ContactUs/>}/>
+            <Route path="/FAQs" element={<FAQs/>}/>
           </Routes>
         </BrowserRouter>
       </div>
