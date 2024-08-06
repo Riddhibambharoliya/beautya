@@ -5,7 +5,7 @@ const SkincareMenu = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className=" hidden fixed md:flex flex-1 inset-0 bg-black bg-opacity-50 backdrop-blur-sm  top-20 justify-center h-screen w-full">
+    <div className="hidden fixed md:flex flex-1 inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm  top-20 justify-center h-screen w-full">
       <div className="bg-white p-5 shadow-lg h-fit w-full ">
         <button
           className="absolute top-3 right-3 text-xl font-bold"

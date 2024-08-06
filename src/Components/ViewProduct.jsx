@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Common/Navbar";
 import Footer from "./Common/Footer";
 import { GoChevronRight } from "react-icons/go";
@@ -33,6 +33,17 @@ const ViewProduct = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isBranchModalOpen, setIsBranchModalOpen] = useState(false);
   const productsPerPage = 4;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     setProducts(SellerProduct);
@@ -366,8 +377,43 @@ const ViewProduct = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center my-5">
-              <img src={offer} alt="" className="md:h-[30rem] md:w-[50rem]" />
+            <div className="relative flex justify-center items-center my-3 md:my-5">
+              <video
+                ref={videoRef}
+                className="2xl:h-[30rem] md:h-[25rem] md:w-auto shadow-lg"
+                onClick={handlePlayPause}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              >
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              {!isPlaying && (
+                <button
+                  onClick={handlePlayPause}
+                  className="absolute inset-0 flex justify-center items-center text-white text-4xl "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-16 h-16 border-4 rounded-full border-white"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              )}
+              {/* <video className="md:h-[30rem] md:w-auto shadow-lg" controls>
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video> */}
+              {/* <img src={offer} alt="" className="md:h-[30rem] md:w-[50rem]" /> */}
             </div>
           </div>
           <div className="w-full flex flex-col items-center my-5 py-10 bg-[#FBEFF2]">

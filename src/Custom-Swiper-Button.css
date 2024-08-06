@@ -1,0 +1,24 @@
+.mySwiper .swiper-button-next:after,.mySwiper .swiper-button-prev:after{
+    color: black;
+    background-color: white;
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid gray;
+    padding: 10px 14px;
+    position: absolute;
+    margin: 0px 0px 180px 0px;
+}
+
+.swiper-button-prev:after{
+    color: white;
+    margin-left: 30px;
+}
+
+.swiper-button-next:after{
+    color: white;
+    margin-right: 30px;
+}
+
+.swiper-pagination{
+   display: none;
+}

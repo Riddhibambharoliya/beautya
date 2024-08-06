@@ -118,7 +118,7 @@ const Landing = () => {
 
           <BestSeller />
 
-          <div className="bg-[#3D021E] py-6 my-10 ">
+          <div className="bg-[#3D021E] py-6 my-5 ">
             <NewSeller />
           </div>
 
@@ -210,8 +210,8 @@ const Landing = () => {
                 <div className="flex md:justify-end justify-center md:pr-14 mt-4 md:mt-0">
                   <button className="text-[#A10550]">View All</button>
                 </div>
-                <div className="flex flex-row justify-center items-center md:w-[80rem]">
-                  <div className="flex flex-wrap md:flex-row flex-col md:gap-5 gap-2 mt-5 justify-center">
+                <div className="flex flex-row justify-center items-center 2xl:w-[80rem] md:w-auto">
+                  <div className="flex flex-wrap flex-row md:gap-5 gap-2 mt-5 justify-center">
                     <Blog />
                   </div>
                 </div>

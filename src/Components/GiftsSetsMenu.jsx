@@ -340,9 +340,9 @@ const GiftsSetsMenu = () => {
                   )}
                 </div>
                 <div
-                  className={`fixed inset-0 z-50 bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
+                  className={`fixed inset-0  bg-white p-4 transform transition-transform duration-300 ease-in-out md:relative md:p-0 ${
                     viewFilters
-                      ? "  translate-x-0 overflow-y-scroll"
+                      ? "  translate-x-0 overflow-y-scroll z-50"
                       : "translate-x-full "
                   } md:translate-x-0 flex flex-col md:gap-1 md:mr-5 ${
                     viewFilters ? "h-full w-full" : ""
@@ -357,6 +357,7 @@ const GiftsSetsMenu = () => {
                       &times;
                     </span>
                   </div>
+                  <div>
                   <OutOfStockToggle />
                   {menuData.map((menu, index) => (
                     <div className="bg-white border-b">
@@ -394,6 +395,7 @@ const GiftsSetsMenu = () => {
                       </ul>
                     </div>
                   ))}
+                  </div>
                   <div className="border-t md:hidden">
                     <div className="grid grid-cols-2 p-3">
                       <button
@@ -444,7 +446,7 @@ const GiftsSetsMenu = () => {
                   ) : (
                     <div
                       key={index}
-                      className="flex flex-col 2xl:w-64 lg:w-60 md:w-44 w-36 h-fit border bg-white"
+                      className="flex flex-col 2xl:w-64 lg:w-60 md:w-44 w-36 h-fit border bg-white cursor-pointer"
                       onClick={()=>navigate("/View_Products")}
                     >
                       <img

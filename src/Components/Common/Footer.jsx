@@ -49,8 +49,8 @@ const Footer = () => {
             <p>Beautya Branches</p>
             <Link to={'/Contact_Us'}>Contact Us</Link>
             <Link to={'/FAQs'}>FAQ</Link>
-            <p>Our Brand</p>
-            <p>Blog</p>
+            <Link to={'/Brand'}>Our Brand</Link>
+            <Link to={'/Blog'}>Blog</Link>
           </div>
           <div>
             <p className="font-bold text-lg text-[#FBEFF2] pb-3">Products</p>
