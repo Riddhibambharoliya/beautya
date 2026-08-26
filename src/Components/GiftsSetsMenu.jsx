@@ -134,55 +134,55 @@ const GiftsSetsMenu = () => {
     setProducts(newList);
   };
 
-  const menuData = [
-    {
-      title: "Category",
-      items: [
-        "Cleansers",
-        "Exfoliator",
-        "Toners",
-        "Retinols",
-        "Peels And Masques",
-        "Moisturizer",
-        "Night Cream",
-        "Facial Cream",
-        "Sunscreen",
-        "Eye Care",
-      ],
-    },
-    {
-      title: "Skin Condition",
-      items: [
-        "Brightening",
-        "Hydration",
-        "Acne",
-        "Anti-Aging",
-        "Redness",
-        "Sensitive Skin",
-        "Sun Protection",
-      ],
-    },
-    {
-      title: "Featured",
-      items: [
-        "New",
-        "Best Seller",
-        "Travel Size",
-        "Professional Treatments",
-        "Daily Defense",
-      ],
-    },
-    {
-      title: "Price",
-      items: [
-        "$50.00 - $150.00",
-        "$150.00 - $250.00",
-        "$250.00 - $350.00",
-        "$350.00 - $450.00",
-        "$450.00 - $550.00",
-      ],
-    },
-  ];
+    const menuData = [
+      {
+        title: "Category",
+        items: [
+          "Cleansers",
+          "Exfoliator",
+          "Toners",
+          "Retinols",
+          "Peels And Masques",
+          "Moisturizer",
+          "Night Cream",
+          "Facial Cream",
+          "Sunscreen",
+          "Eye Care",
+        ],
+      },
+      {
+        title: "Skin Condition",
+        items: [
+          "Brightening",
+          "Hydration",
+          "Acne",
+          "Anti-Aging",
+          "Redness",
+          "Sensitive Skin",
+          "Sun Protection",
+        ],
+      },
+      {
+        title: "Featured",
+        items: [
+          "New",
+          "Best Seller",
+          "Travel Size",
+          "Professional Treatments",
+          "Daily Defense",
+        ],
+      },
+      {
+        title: "Price",
+        items: [
+          "$50.00 - $150.00",
+          "$150.00 - $250.00",
+          "$250.00 - $350.00",
+          "$350.00 - $450.00",
+          "$450.00 - $550.00",
+        ],
+      },
+    ];
 
   return (
     <>
